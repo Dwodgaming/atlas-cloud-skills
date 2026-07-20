@@ -107,7 +107,7 @@ If the user has installed the Atlas Cloud MCP Server (`npx atlascloud-mcp`), the
 - **Params**: `prediction_id` (required): Prediction ID returned from a generation request
 - **Purpose**: Check image/video generation task status and result
 - **Status values**: `starting` → `processing` → `completed`/`succeeded`/`failed`
-- **On completion**: Returns output URL list — can download locally via curl/wget
+- **On completion**: Returns output URL list — can download locally via curl/wget (Atelier-backed projects: use deliver.mjs instead — see Atelier section below)
 
 #### `atlas_upload_media` — Upload Media File
 - **Params**: `file_path` (required): Absolute path to the local file
@@ -190,11 +190,12 @@ Request body:
 ```json
 {
   "model": "bytedance/seedance-2.0/text-to-video",
-  "prompt": "A rocket launching into space, cinematic lighting",
+  "prompt": "A rocket launching into space, cinematic lighting, thunderous engine roar and crackling exhaust, rising orchestral score",
   "duration": 5,
   "resolution": "1080p",
   "ratio": "16:9",
-  "generate_audio": true
+  "generate_audio": true,
+  "bitrate_mode": "high"
 }
 ```
 
@@ -204,10 +205,11 @@ Common video model parameters:
 - `duration`: Video duration in seconds (Seedance 2.0 supports 4-15, or `-1` for auto)
 - `resolution`: `"480p"` / `"720p"` / `"1080p"` (Seedance 2.0)
 - `aspect_ratio` / `ratio`: Aspect ratio (e.g., `"16:9"`, `"9:16"`, `"1:1"`, `"21:9"`, `"adaptive"`)
-- `generate_audio`: Seedance 2.0 generates synchronized native audio (voice/SFX/BGM) jointly with video. Default `true`
+- `generate_audio`: Seedance 2.0 generates synchronized native audio (voice/SFX/BGM/ambience) jointly with video, in a single pass — and it materially improves the result. **Default `true`.** Describe the intended audio (SFX, ambience, music mood, any dialogue) in the prompt so the model has something to score. Only set `false` when the user explicitly wants a silent clip or will add audio in post.
+- `bitrate_mode`: output encoding quality — enum `standard` | `high`. **Default to the highest available (`"high"`).** Verify the live schema enum before firing, since the ceiling may rise.
 - `web_search`: Seedance 2.0 T2V only — enable to ground generation in real-world references. Default `false`
 
-> Different video models accept different parameters. Always call `atlas_get_model_info` or fetch the schema first for unfamiliar models.
+> Different video models accept different parameters. The audio/bitrate defaults above are a starting point, not a substitute for the schema — always call `atlas_get_model_info` or fetch the schema first for unfamiliar models, and never fabricate parameter names or enum values.
 
 Poll results using the same prediction endpoint. Video generation typically takes **1-5 minutes** (Fast variants 30-90s).
 
@@ -509,3 +511,28 @@ If you prefer using Skills instead of MCP:
 ```bash
 npx skills add AtlasCloudAI/atlas-cloud-skills
 ```
+
+<!-- atelier:start -->
+## Atelier-backed projects (routing pack present)
+
+If the client/project root contains `_atelier/project.json`, the project is Atelier-backed. Then these rules override any download/output instructions above:
+
+- **Deliver every generated file via `deliver.mjs`** — never curl/save to a hand-typed path:
+  ```bash
+  node /Users/bray/bray-os/my-projects/atelier/skills/atelier-project/scripts/deliver.mjs \
+    <result-url-or-file> --batch <media-root>/<batch> \
+    --model "<model name>" --provider <provider> --aspect <ar> \
+    --prompt "…" [--prompt-file p.txt] [--uuid <request-id>] [--json]
+  ```
+  It places media at the batch root, writes the `.meta.json` sidecar (what makes results filterable in review), appends the manifest row in pipeline folders, and refuses sprawl layouts. QA frames: `--kind qa` (→ `.qa/`). Copies of input refs: `--kind input` (→ `inputs/`).
+- **Stage every image or video job for provenance and routing** before firing:
+  ```bash
+  node /Users/bray/bray-os/my-projects/atelier/skills/atelier-project/scripts/stage-job.mjs \
+    <client-root> --title "Shot 1" --model "<model>" --media-kind <image|video> \
+    --prompt-file shot1.txt [--ref <project-relative-path>]… [--param k=v]…
+  ```
+  Image generations, edits, and upscales return already approved: fire immediately using the staged prompt. Video stays pending: start Atelier, show `/preview`, and fire only after explicit reviewer approval; never auto-approve video.
+- **References are read-only.** Images may iterate from any project-confined, non-discarded media. Video generated refs must be approved/winner (per `source-truth.mjs`); supplied files under `references/` remain valid inputs.
+
+No `_atelier/project.json` → ignore this section.
+<!-- atelier:end -->

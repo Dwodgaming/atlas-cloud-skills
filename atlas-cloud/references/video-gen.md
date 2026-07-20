@@ -5,6 +5,8 @@
 - [Node.js / TypeScript](#nodejs--typescript)
 - [cURL](#curl)
 
+> **Seedance 2.0 defaults:** pass `generate_audio: true` (native music + SFX + ambience, jointly generated — describe the intended audio in the prompt) and `bitrate_mode: "high"` (highest available encoding quality) unless the user wants a silent clip or a lighter file. These are starting defaults, not a schema substitute — verify the live enum before firing and never fabricate parameter names. The kwaivgi/Kling templates below omit these because they're Seedance-specific.
+
 ---
 
 ## Python
