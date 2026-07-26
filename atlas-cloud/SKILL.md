@@ -515,11 +515,11 @@ npx skills add AtlasCloudAI/atlas-cloud-skills
 <!-- atelier:start -->
 ## Atelier-backed projects (routing pack present)
 
-If the client/project root contains `_atelier/project.json`, the project is Atelier-backed. Then these rules override any download/output instructions above:
+If the client/project root contains `_atelier/project.json`, the project is Atelier-backed. Then these rules override any download/output instructions above. `$ATELIER_ROOT` is the local Atelier checkout:
 
 - **Deliver every generated file via `deliver.mjs`** — never curl/save to a hand-typed path:
   ```bash
-  node /Users/bray/bray-os/my-projects/atelier/skills/atelier-project/scripts/deliver.mjs \
+  node "$ATELIER_ROOT/skills/atelier-project/scripts/deliver.mjs" \
     <result-url-or-file> --batch <media-root>/<batch> \
     --model "<model name>" --provider <provider> --aspect <ar> \
     --prompt "…" [--prompt-file p.txt] [--uuid <request-id>] [--json]
@@ -527,7 +527,7 @@ If the client/project root contains `_atelier/project.json`, the project is Atel
   It places media at the batch root, writes the `.meta.json` sidecar (what makes results filterable in review), appends the manifest row in pipeline folders, and refuses sprawl layouts. QA frames: `--kind qa` (→ `.qa/`). Copies of input refs: `--kind input` (→ `inputs/`).
 - **Stage every image or video job for provenance and routing** before firing:
   ```bash
-  node /Users/bray/bray-os/my-projects/atelier/skills/atelier-project/scripts/stage-job.mjs \
+  node "$ATELIER_ROOT/skills/atelier-project/scripts/stage-job.mjs" \
     <client-root> --title "Shot 1" --model "<model>" --media-kind <image|video> \
     --prompt-file shot1.txt [--ref <project-relative-path>]… [--param k=v]…
   ```
