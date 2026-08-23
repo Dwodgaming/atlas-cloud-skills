@@ -541,3 +541,27 @@ If you prefer using Skills instead of MCP:
 ```bash
 npx skills add AtlasCloudAI/atlas-cloud-skills
 ```
+
+<!-- atelier:start -->
+## Atelier-backed projects (routing pack present)
+
+If the client/project root contains `_atelier/project.json`, these rules override any download/output instructions above:
+
+1. Stage the exact route and provenance before firing:
+   ```bash
+   atelier job stage <project-root> --concept <concept-id-or-slug> --shot <shot-id-slug-or-alias> \
+     --title "Shot 1" --model "<model>" --provider <provider> --media-kind <image|video> \
+     --prompt-file shot1.txt [--ref <project-relative-path>]… [--param k=v]… --json
+   ```
+   Record the returned `id` as `<run-id>`. Images are immediately approved; video stays pending until explicit Preview approval.
+2. Register each result by that exact staged ID — never save to a hand-typed path:
+   ```bash
+   atelier asset register <result-url-or-file> --project <project-root> --run-id <run-id> \
+     [--uuid <provider-request-id>] --json
+   ```
+   Registration writes canonical Working truth. Only an explicit human `atelier asset curate` copies an approved/winner file to Outputs; provider skills never curate, verify, or deliver.
+
+References are read-only. Video-generated references must be approved/winner; supplied `references/` media remains valid.
+
+No `_atelier/project.json` → ignore this section.
+<!-- atelier:end -->
