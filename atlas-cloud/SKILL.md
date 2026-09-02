@@ -554,12 +554,11 @@ If the client/project root contains `_atelier/project.json`, these rules overrid
      --prompt-file shot1.txt [--ref <project-relative-path>]… [--param k=v]… --json
    ```
    Record the returned `id` as `<run-id>`. Images are immediately approved; video stays pending until explicit Preview approval.
-2. Register each result by that exact staged ID — never save to a hand-typed path:
+2. Let the provider return URLs (no `--download`), then finish the run in one command — never save to a hand-typed path:
    ```bash
-   atelier asset register <result-url-or-file> --project <project-root> --run-id <run-id> \
-     [--uuid <provider-request-id>] --json
+   atelier job finish <project-root> <run-id> <result-url-or-file>... [--request-id <provider-request-id>]... --json
    ```
-   Registration writes canonical Working truth. Only an explicit human `atelier asset curate` copies an approved/winner file to Outputs; provider skills never curate, verify, or deliver.
+   Finish moves every candidate into the routed shot leaf, writes receipts and manifest rows, and marks the run succeeded. Only an explicit human `atelier asset curate` copies an approved/winner file to Outputs; provider skills never curate, verify, or deliver. Full workflow: the project's `atelier-review` skill.
 
 References are read-only. Video-generated references must be approved/winner; supplied `references/` media remains valid.
 
