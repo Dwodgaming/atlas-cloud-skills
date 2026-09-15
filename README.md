@@ -8,9 +8,11 @@
   <a href="https://github.com/AtlasCloudAI/atlas-cloud-skills"><img src="https://img.shields.io/badge/install-npx%20skills%20add-28CF8D?style=flat&colorA=18181B&colorB=28CF8D" alt="npx skills add"></a>
 </p>
 
-> 🎬 **Seedance 2.0 is now live on Atlas Cloud!** ByteDance's flagship video model — native audio-video joint generation, up to 15s cinematic output, up to 1440P, multimodal reference (up to 9 images + 3 videos + 3 audio clips), and director-level camera control. Available now: [Text-to-Video](https://www.atlascloud.ai/models/bytedance/seedance-2.0/text-to-video?utm_source=github&utm_campaign=atlas-cloud-skills) · [Image-to-Video](https://www.atlascloud.ai/models/bytedance/seedance-2.0/image-to-video?utm_source=github&utm_campaign=atlas-cloud-skills) · [Reference-to-Video](https://www.atlascloud.ai/models/bytedance/seedance-2.0/reference-to-video?utm_source=github&utm_campaign=atlas-cloud-skills) · [Fast variants](https://www.atlascloud.ai/models/bytedance/seedance-2.0-fast/text-to-video?utm_source=github&utm_campaign=atlas-cloud-skills) from **$0.076/s**.
+> 🎬 **Seedance 2.5 is now live on Atlas Cloud!** ByteDance's newest flagship video model — native audio-video joint generation, up to **30s in a single generation**, native 480p/720p/1080p (up to 4K via built-in super-resolution), aspect ratios from 21:9 to 9:16, and multimodal reference of up to 30 images + 10 videos + 10 audio clips. Available now: [Text-to-Video](https://www.atlascloud.ai/models/bytedance/seedance-2.5/text-to-video?utm_source=github&utm_campaign=atlas-cloud-skills) · [Image-to-Video](https://www.atlascloud.ai/models/bytedance/seedance-2.5/image-to-video?utm_source=github&utm_campaign=atlas-cloud-skills) · [Reference-to-Video](https://www.atlascloud.ai/models/bytedance/seedance-2.5/reference-to-video?utm_source=github&utm_campaign=atlas-cloud-skills) from **$0.134/s**. Cheaper tiers: [Seedance 2.0 Fast](https://www.atlascloud.ai/models/bytedance/seedance-2.0-fast/text-to-video?utm_source=github&utm_campaign=atlas-cloud-skills) from **$0.072/s** · [Seedance 2.0 Mini](https://www.atlascloud.ai/models/bytedance/seedance-2.0-mini/text-to-video?utm_source=github&utm_campaign=atlas-cloud-skills) from **$0.039/s**.
 >
 > 🔓 **Need the full-power build?** The **unrestricted / full-capability pipeline** — fewer guardrails, broader subject range, max-fidelity output — is available through [Atlas Cloud Workflow](https://www.atlascloud.ai/console/workflow?utm_source=github&utm_campaign=atlas-cloud-skills). Hook it straight into your skill via the same API key.
+>
+> 🎬 **Newest video generations — Kling 4.0 · Wan 3.0.** The latest Kling and Wan alongside [Kling 3.0 / Video O3](https://www.atlascloud.ai/models?utm_source=github&utm_campaign=atlas-cloud-skills) and [Wan 2.7](https://www.atlascloud.ai/models/alibaba/wan-2.7/text-to-video?utm_source=github&utm_campaign=atlas-cloud-skills) — same API key, same endpoints, [browse the full video line-up](https://www.atlascloud.ai/models?utm_source=github&utm_campaign=atlas-cloud-skills).
 
 Use [Atlas Cloud](https://www.atlascloud.ai?utm_source=github&utm_campaign=atlas-cloud-skills)'s 300+ image / video / LLM models inside Claude Code, Codex, Gemini CLI, and other AI coding agents. Generate images, videos & chat via curated Skills.
 
@@ -20,13 +22,13 @@ Use [Atlas Cloud](https://www.atlascloud.ai?utm_source=github&utm_campaign=atlas
 
 <!-- ATLAS-MODELS:START lang=en campaign=atlas-cloud-skills -->
 <!-- ⚠️ Auto-generated from the live model catalog by AtlasCloudAI/.github/scripts/update-models-readme.mjs — do not edit by hand. -->
-- 🎬 **Video** (186) — MiniMax H3 · Wan-3.0-Prime · Wan-3.0 · Seedance 2.5 · Youchuan V8.2 · Seedance 2.0 Mini
-- 🎨 **Image** (117) — Grok Imagine Image 2.0 · Qwen Image 3.0 Pro · Seedream v5.0 Pro · Qwen Image 3.0
-- 🧊 **3D** (7) — Seed3D 2.0 · Hunyuan 3D Rapid · Hunyuan 3D Pro · Tripo H3.1
-- 💬 **LLM** (66) — DeepSeek V4 Pro 0813 · Grok 4.6 · DeepSeek V4 Flash 0731 · Qwen3.8 Max
+- 🎬 **Video** (200) — MiniMax H3 Max · MiniMax H3 Fast · Gemini Omni 1.1 Flash · MiniMax H3 · Wan-3.0-Prime · Wan-3.0
+- 🎨 **Image** (127) — GPT Image 2.5 Sunburst · GPT Image 2.5 Flare · Seedream v4.7 · MAI-Image-2.5-Pro
+- 🧊 **3D** (7) — Seed3D 2.0 · Tripo H3.1 · Hunyuan 3D Rapid · Hunyuan 3D Pro
+- 💬 **LLM** (70) — DeepSeek V4 Pro 0813 · Grok 4.6 · DeepSeek V4 Flash Vision Exp · DeepSeek V4 Flash 0731
 - 🔊 **Audio (TTS · Music · ASR)** (17) — Suno chirp-v4-5-all · Suno chirp-v4-5-plus · Suno chirp-auk · Suno chirp-fenix
 
-- 📚 **Explore more** — [all 410 live models »](https://www.atlascloud.ai/models?utm_source=github&utm_campaign=atlas-cloud-skills)
+- 📚 **Explore more** — [all 444 live models »](https://www.atlascloud.ai/models?utm_source=github&utm_campaign=atlas-cloud-skills)
 <!-- ATLAS-MODELS:END -->
 
 ## Contents
@@ -34,6 +36,9 @@ Use [Atlas Cloud](https://www.atlascloud.ai?utm_source=github&utm_campaign=atlas
 - [Supported Models](#supported-models)
 - [Featured Recipes](#featured-recipes)
 - [Available Skills](#available-skills)
+  - [atlas-cloud](#atlas-cloud)
+  - [seedance-2-5-skill](#seedance-2-5-skill)
+  - [universal-video-prompt-skill](#universal-video-prompt-skill)
 - [Installation](#installation)
 - [Setup](#setup)
 - [What You Can Do](#what-you-can-do)
@@ -63,6 +68,29 @@ Quickly integrate Atlas Cloud API into your projects. This skill provides:
 - OpenAI SDK compatibility guide for LLM models
 - Error handling, retry strategy, and best practices
 
+### seedance-2-5-skill
+
+A model-specific sub-skill for controllable Seedance video, layered on top of `atlas-cloud`. Use it when a job needs shot planning rather than a single prompt:
+
+- **Route selection first** — text-to-video, storyboard-image-to-video, asset-reference-to-video, first-and-last-frame, or extending an existing clip
+- **Reference discipline** — how to assign people / product / scene / style / audio references so identity holds across shots
+- **Shot craft** — camera, lighting and composition vocabulary, transition patterns, long-video continuity, real-person handling
+- **Editing and extension** — rewriting part of an existing video, changing lighting or style, extending a short clip
+- **Execution** — submits through Atlas Cloud (MCP, CLI or REST) and verifies model availability before a billable run
+- Every reference ships in English and Simplified Chinese; Chinese requests follow a dedicated Chinese workflow
+
+Works with [`universal-video-prompt-skill`](#universal-video-prompt-skill) when the same brief needs to run on more than one model. Prompt library for this model: [awesome-seedance-2.5-prompts-skills](https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills)
+
+### universal-video-prompt-skill
+
+Model-agnostic companion to `seedance-2-5-skill`. It writes one prompt **spec** — scope, locks, staging, end states — separately from the dialect that expresses it, then compiles that spec for whichever video model you can actually call. Use it when:
+
+- The same brief has to run on several models, or the target model is not available yet and the work must proceed elsewhere
+- You are building a model-comparison matrix and need the prompts to differ only by dialect
+- A prompt must survive a model swap instead of being rewritten
+
+Each model carries a measured profile (reference syntax, limits, timing adherence, default-bias behaviour); the skill probes what it does not know, degrades the spec to what the model supports, and reports every degrade. English + Simplified Chinese references throughout.
+
 ## Installation
 
 ### One-Line Install
@@ -79,7 +107,17 @@ curl -fsSL https://raw.githubusercontent.com/AtlasCloudAI/atlas-cloud-skills/mai
 
 ### Manual
 
-Copy the `atlas-cloud/` directory to `~/.claude/skills/atlas-cloud/`.
+Copy `atlas-cloud/` to `~/.claude/skills/atlas-cloud/`, and any sub-skill under `skills/` to `~/.claude/skills/<name>/`.
+
+### Install one skill only
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/AtlasCloudAI/atlas-cloud-skills/main/install.sh | sh -s atlas-cloud
+curl -fsSL https://raw.githubusercontent.com/AtlasCloudAI/atlas-cloud-skills/main/install.sh | sh -s seedance-2-5-skill
+curl -fsSL https://raw.githubusercontent.com/AtlasCloudAI/atlas-cloud-skills/main/install.sh | sh -s universal-video-prompt-skill
+```
+
+`seedance-2-5-skill` references `universal-video-prompt-skill`, so install both if you want cross-model prompt specs.
 
 ## Setup
 
@@ -97,7 +135,7 @@ See [`.env.example`](.env.example) for a ready-to-copy template.
 | Capability | Endpoint | Example Models |
 |------------|----------|----------------|
 | **Image Generation** | `POST /api/v1/model/generateImage` | Nano Banana 2, Seedream v5.0, Z-Image |
-| **Video Generation** | `POST /api/v1/model/generateVideo` | Seedance 2.0, Kling v3.0, Vidu Q3 |
+| **Video Generation** | `POST /api/v1/model/generateVideo` | Seedance 2.5, Kling 4.0, Wan 3.0, Kling Video O3 |
 | **Audio — TTS & Music** | `POST /api/v1/model/generateAudio` | Seed Audio 1.0, Suno Chirp v5, MiniMax Music |
 | **Speech-to-Text (ASR)** | `POST /api/v1/model/generateAudio` | Seed ASR 2.0, xAI STT |
 | **3D Generation** | `POST /api/v1/model/generateImage` | Seed3D 2.0, Hunyuan 3D (image/text-to-3D) |
