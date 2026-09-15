@@ -254,10 +254,11 @@ Common video model parameters:
 - `prompt` (required for T2V): Video description
 - `image` / `image_url`: Input image (for image-to-video models — Seedance 2.5 uses `image`, Kling uses `image_url`)
 - `duration`: Video duration in seconds (Seedance 2.5 supports 4-30, Seedance 2.0 supports 4-15, or `-1` for auto)
-- `resolution`: `"480p"` / `"720p"` / `"1080p"` native; Seedance 2.5 also takes `-sr` / `-esr` upscale tiers up to `"4k-sr"`
+- `resolution`: `"480p"` / `"720p"` / `"1080p"` native; Seedance 2.5 also takes `"720p-sr"`, `"720p-esr"`, `"1080p-sr"`, `"1080p-esr"`, `"1080p-esr & 60fps"`, `"1440p-sr"`, `"1440p-esr"`, `"4k-esr"` (there is no `4k-sr`)
 - `aspect_ratio` / `ratio`: Aspect ratio (e.g., `"16:9"`, `"9:16"`, `"1:1"`, `"21:9"`, `"adaptive"`)
 - `generate_audio`: Seedance 2.5 / 2.0 generate synchronized native audio (voice/SFX/BGM) jointly with video. Default `true`
-- `web_search`: Seedance T2V only — enable to ground generation in real-world references. Default `false`
+- `web_search`: Seedance **2.0** T2V only — not in the 2.5 schema. Default `false`
+- Seedance 2.5 detail: see `references/video-gen.md` → "Seedance 2.5"
 
 > Different video models accept different parameters. Always call `atlas_get_model_info` or fetch the schema first for unfamiliar models.
 
