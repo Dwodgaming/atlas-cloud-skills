@@ -19,7 +19,7 @@ A complete 9:16 Story / Reels ad sequence: three on-brand slides (hook → value
 1. **Script the 3 beats** — "From this brief, write a 3-slide Story ad: slide 1 hook, slide 2 value/proof, slide 3 CTA. Give headline + subline per slide." → `atlas_chat` with **Claude**.
 2. **Generate 3 consistent stills** — "3 matching 9:16 Story slides, same brand palette and layout, texts: [per slide]." → `atlas_generate_image` with **Seedream 4.5 sequential** so all three share one style.
    > Tip: ask the agent to `atlas_search_docs` for Seedream first to confirm the live 9:16 ratio and how many frames sequential returns.
-3. **Animate each slide** — "Animate this Story slide: gentle motion + text reveal, 5s, 9:16." → `atlas_generate_video` with **Seedance 2.5 i2v** (one call per slide; `seedance-2.0-fast` for drafts).
+3. **Animate each slide** — "Animate this Story slide: gentle motion + text reveal, 5s, 9:16." → `atlas_generate_video` with **Seedance 2.5 i2v** (one call per slide; `bytedance/seedance-2.0-fast/image-to-video` for drafts).
 4. **Add motion polish** — for a stronger CTA slide, see the **Photo → Stylized Animated Clip** (`style-animate`) motion recipe.
 5. **Assemble** — sequence the three 5s clips hook → value → CTA, add captions and a brand end-frame.
 
@@ -36,7 +36,7 @@ Animation (Seedance 2.5 i2v): "Animate this 9:16 slide: subtle background drift 
 - **Seedream 4.5 sequential** is the key to a unified set — it keeps palette and layout consistent across all three slides; reach for **Nano Banana Pro** if a slide needs heavier typography.
 - For dramatic CTA motion, swap **Seedance 2.5 i2v** for **Kling 3 i2v** (`kwaivgi/kling-v3.0-pro/image-to-video`).
 - Keep every asset true 9:16 (1080×1920) and all key copy inside Story-safe margins so the UI doesn't cover it.
-- Draft all three animations with Seedance `seedance-2.0-fast` to lock pacing, then re-render finals at full quality.
+- Draft all three animations with Seedance `bytedance/seedance-2.0-fast/image-to-video` to lock pacing, then re-render finals at full quality.
 
 ## Related
 

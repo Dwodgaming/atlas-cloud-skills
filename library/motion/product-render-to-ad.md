@@ -11,7 +11,7 @@ A short (5–10s) advertising clip that animates a single product still into a p
 ## Models used
 
 - 🎬 **Video** — Kling 3 image-to-video (resolve live; e.g. `kwaivgi/kling-v3.0-pro/image-to-video`)
-- 🎬 **Video (drafts)** — Seedance 2.5 image-to-video (resolve live; e.g. `bytedance/seedance-2.5/image-to-video`); use the `seedance-2.0-fast` variant first
+- 🎬 **Video (drafts)** — Seedance 2.5 image-to-video (resolve live; e.g. `bytedance/seedance-2.5/image-to-video`); use the `bytedance/seedance-2.0-fast/image-to-video` variant first
 - 🎨 **Image** — Seedream 4.5 (resolve live; e.g. `bytedance/seedream-v4.5`), only if you need a cleaner hero still first
 - 💬 **LLM** — Claude, for ad copy / shot-by-shot prompt expansion (optional)
 
@@ -19,7 +19,7 @@ A short (5–10s) advertising clip that animates a single product still into a p
 
 1. **Get a clean hero still** — if your product photo is messy, generate one with the [E-commerce Product Hero Shot](../visual/ecommerce-hero.md) recipe first.
 2. **Upload the still** — ask the agent to upload your local product image so it becomes a URL → maps to `atlas_upload_media`.
-3. **Draft the motion** — "Animate this product shot: slow 15° turntable, soft light sweep left to right, shallow depth of field, 5 seconds." → maps to `atlas_generate_video` with **Seedance 2.5** (`seedance-2.0-fast` for the cheap draft pass).
+3. **Draft the motion** — "Animate this product shot: slow 15° turntable, soft light sweep left to right, shallow depth of field, 5 seconds." → maps to `atlas_generate_video` with **Seedance 2.5** (`bytedance/seedance-2.0-fast/image-to-video` for the cheap draft pass).
    > Tip: ask the agent to `atlas_search_docs` for the model first so it pulls the live schema (duration, aspect ratio, resolution params change per model).
 4. **Final render** — re-run the approved prompt on **Kling 3 image-to-video** for the crisp, high-fidelity version.
 5. **Assemble** — generate 2–3 angles, then ask the agent for an ffmpeg concat command + a text overlay for your tagline.

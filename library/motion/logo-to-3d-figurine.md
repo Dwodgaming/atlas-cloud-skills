@@ -12,7 +12,7 @@ A short reveal clip where your flat 2D logo becomes a glossy, toy-like 3D figuri
 
 - 🎨 **Image (edit)** — Nano Banana Pro edit (resolve live; e.g. `google/nano-banana-pro/edit`)
 - 🎬 **Video** — Kling effects (resolve live; e.g. `kwaivgi/kling-effects`)
-- 🎬 **Video (alt)** — Seedance 2.5 image-to-video (resolve live; e.g. `bytedance/seedance-2.5/image-to-video`); `seedance-2.0-fast` for drafts
+- 🎬 **Video (alt)** — Seedance 2.5 image-to-video (resolve live; e.g. `bytedance/seedance-2.5/image-to-video`); `bytedance/seedance-2.0-fast/image-to-video` for drafts
 - 💬 **LLM** — Claude, for material / lighting prompt ideas (optional)
 
 ## Steps
@@ -21,7 +21,7 @@ A short reveal clip where your flat 2D logo becomes a glossy, toy-like 3D figuri
 2. **Make the figurine still** — "Turn this logo into a collectible vinyl figurine on a round base, studio lighting, on a desk, packaging blister behind it." → maps to `atlas_generate_image` (edit) with **Nano Banana Pro**.
    > Tip: ask the agent to `atlas_search_docs` for the edit model first so it pulls the live input-image field name and size options.
 3. **Upload the figurine still** — same `atlas_upload_media` step on the new render.
-4. **Animate the turntable** — drive a clean 360° spin → maps to `atlas_generate_video`. Try **Kling effects** for a ready-made reveal, or **Seedance 2.5 i2v** (`seedance-2.0-fast` draft → full render) for a custom orbit.
+4. **Animate the turntable** — drive a clean 360° spin → maps to `atlas_generate_video`. Try **Kling effects** for a ready-made reveal, or **Seedance 2.5 i2v** (`bytedance/seedance-2.0-fast/image-to-video` draft → full render) for a custom orbit.
 5. **Polish** — ask the agent for an ffmpeg loop (seamless start/end) and an optional logo lockup card at the end.
 
 ## Prompt starters

@@ -33,7 +33,7 @@ Reveal (Seedance 2.5 i2v): "Handheld unboxing motion: hands rotate the product t
 
 ## Tips & variations
 
-- Use **Kling 3 i2v** when you need more lifelike hand articulation; use **Seedance 2.5 i2v** (`seedance-2.0-fast`) for cheap pacing drafts.
+- Use **Kling 3 i2v** when you need more lifelike hand articulation; use **Seedance 2.0 Fast i2v** (`bytedance/seedance-2.0-fast/image-to-video`) for cheap pacing drafts.
 - For a fuller branded spot from the same hero shot, follow the **Product Render → 30-Second Ad** (`product-render-to-ad`) motion recipe instead.
 - Keep lighting slightly imperfect and add light grain — too-clean renders read as ads and lose the UGC trust signal.
 - Generate 2–3 scene backgrounds (bedroom, café, car seat) and batch-animate to A/B which setting performs.

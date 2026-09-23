@@ -18,7 +18,7 @@ A single, gorgeous establishing shot generated straight from text — a sweeping
 ## Steps
 
 1. **Expand the line** — "Turn 'a lighthouse at dawn' into a detailed cinematic shot prompt with camera move, lens, light, and mood." → maps to `atlas_chat` with **Claude**.
-2. **Draft the framing** — run the expanded prompt cheaply first → maps to `atlas_generate_video` with **Seedance 2.5 t2v** (`seedance-2.0-fast`).
+2. **Draft the framing** — run the expanded prompt cheaply first → maps to `atlas_generate_video` with **Seedance 2.0 Fast t2v** (`bytedance/seedance-2.0-fast/text-to-video`).
    > Tip: ask the agent to `atlas_search_docs` for the model first so it pulls live duration, resolution, and aspect-ratio params.
 3. **Final render** — re-run the keeper on **Veo 3.1 text-to-video** for fidelity *and* native audio (ambient sound baked in), or **Seedance 2.5** for its motion/physics feel (Atlas has no Sora model as of 2026-09-23).
 4. **Grade & loop (optional)** — ask the agent for an ffmpeg color tweak or a clean loop point.
