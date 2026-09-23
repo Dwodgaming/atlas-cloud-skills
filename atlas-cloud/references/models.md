@@ -30,49 +30,56 @@
 
 ---
 
-## Image Models (priced per image)
+## Image Models (priced per image; entry price at the lowest listed size, from the live catalogue on 2026-09-23)
 
 | Model ID | Name | Price |
 |----------|------|-------|
-| `google/nano-banana-2/text-to-image` | Nano Banana 2 Text-to-Image | $0.072/image |
-| `google/nano-banana-2/text-to-image-developer` | Nano Banana 2 Developer | $0.056/image |
-| `google/nano-banana-2/edit` | Nano Banana 2 Edit | $0.072/image |
-| `google/nano-banana-2/edit-developer` | Nano Banana 2 Edit Developer | $0.056/image |
-| `bytedance/seedream-v5.0-lite` | Seedream v5.0 Lite | $0.032/image |
-| `bytedance/seedream-v5.0-lite/edit` | Seedream v5.0 Lite Edit | $0.032/image |
-| `bytedance/seedream-v5.0-lite/sequential` | Seedream v5.0 Lite Sequential | $0.032/image |
+| `openai/gpt-image-2.5-flare/text-to-image` | GPT Image 2.5 Flare Text-to-Image | token-priced: `atlas generate cost` |
+| `openai/gpt-image-2.5-flare/edit` | GPT Image 2.5 Flare Edit | token-priced: `atlas generate cost` |
+| `openai/gpt-image-2.5-sunburst/text-to-image` | GPT Image 2.5 Sunburst Text-to-Image | token-priced: `atlas generate cost` |
+| `openai/gpt-image-2.5-sunburst/edit` | GPT Image 2.5 Sunburst Edit | token-priced: `atlas generate cost` |
+| `google/nano-banana-2/text-to-image` | Nano Banana 2 Text-to-Image | $0.08/image |
+| `google/nano-banana-2/text-to-image-developer` | Nano Banana 2 Developer | $0.028/image |
+| `google/nano-banana-2/edit` | Nano Banana 2 Edit | $0.08/image |
+| `google/nano-banana-2/edit-developer` | Nano Banana 2 Edit Developer | $0.028/image |
+| `bytedance/seedream-v5.0-lite` | Seedream v5.0 Lite | $0.0315/image |
+| `bytedance/seedream-v5.0-lite/edit` | Seedream v5.0 Lite Edit | $0.0315/image |
+| `bytedance/seedream-v5.0-lite/sequential` | Seedream v5.0 Lite Sequential | $0.0315/image |
 | `alibaba/qwen-image/edit-plus-20251215` | Qwen-Image Edit Plus | $0.021/image |
 | `alibaba/wan-2.6/image-edit` | Wan-2.6 Image Edit | $0.021/image |
-| `z-image/turbo` | Z-Image Turbo | $0.01/image |
+| `z-image/turbo` | Z-Image Turbo | $0.005/image |
 | `bytedance/seedream-v4.5` | Seedream v4.5 | $0.036/image |
 
-## Video Models (priced per second of output; figures are the 480p entry price — 720p/1080p cost more)
+## Video Models (priced per second of output; entry price at the lowest listed resolution, from the live catalogue on 2026-09-23. Higher resolutions cost more)
 
 | Model ID | Name | Price |
 |----------|------|-------|
-| `bytedance/seedance-2.5/text-to-video` | **Seedance 2.5 Text-to-Video** (native audio, 4-30s, native up to 1080p / 4K via SR) | $0.134/s |
-| `bytedance/seedance-2.5/image-to-video` | **Seedance 2.5 Image-to-Video** (first+last frame, native audio) | $0.134/s |
-| `bytedance/seedance-2.5/reference-to-video` | **Seedance 2.5 Reference-to-Video** (multimodal: up to 30 images + 10 videos + 10 audio) | $0.134/s |
-| `bytedance/seedance-2.0/text-to-video` | Seedance 2.0 Text-to-Video (native audio, 4-15s) | $0.112/s |
-| `bytedance/seedance-2.0-fast/text-to-video` | Seedance 2.0 Fast Text-to-Video | $0.072/s |
-| `bytedance/seedance-2.0-fast/image-to-video` | Seedance 2.0 Fast Image-to-Video | $0.072/s |
-| `bytedance/seedance-2.0-fast/reference-to-video` | Seedance 2.0 Fast Reference-to-Video | $0.072/s |
-| `bytedance/seedance-2.0-mini/text-to-video` | Seedance 2.0 Mini Text-to-Video (cheapest Seedance tier) | $0.039/s |
-| `kwaivgi/kling-v3.0-std/text-to-video` | Kling v3.0 Std Text-to-Video | $0.071/s |
-| `kwaivgi/kling-v3.0-std/image-to-video` | Kling v3.0 Std Image-to-Video | $0.071/s |
-| `kwaivgi/kling-v3.0-pro/text-to-video` | Kling v3.0 Pro Text-to-Video | $0.095/s |
-| `kwaivgi/kling-v3.0-pro/image-to-video` | Kling v3.0 Pro Image-to-Video | $0.095/s |
-| `kwaivgi/kling-video-o3-pro/text-to-video` | Kling Video O3 Pro Text-to-Video | $0.095/s |
-| `vidu/q3-pro/text-to-video` | Vidu Q3 Pro Text-to-Video | $0.042/s |
-| `vidu/q3-pro/image-to-video` | Vidu Q3 Pro Image-to-Video | $0.042/s |
-| `alibaba/wan-2.7/image-to-video` | Wan-2.7 Image-to-Video (newest Wan on Atlas Cloud) | $0.1/s |
-| `bytedance/seedance-v1.5-pro/text-to-video` | Seedance v1.5 Pro Text-to-Video | $0.047/s |
-| `bytedance/seedance-v1.5-pro/image-to-video` | Seedance v1.5 Pro Image-to-Video | $0.047/s |
+| `bytedance/seedance-2.5/text-to-video` | **Seedance 2.5 Text-to-Video** (native audio, 4-30s, native up to 1080p / 4K via SR) | $0.1397/s |
+| `bytedance/seedance-2.5/image-to-video` | **Seedance 2.5 Image-to-Video** (first+last frame, native audio) | $0.1397/s |
+| `bytedance/seedance-2.5/reference-to-video` | **Seedance 2.5 Reference-to-Video** (multimodal: up to 30 images + 10 videos + 10 audio) | runtime estimate: `atlas generate cost` |
+| `bytedance/seedance-2.0/text-to-video` | Seedance 2.0 Text-to-Video (native audio, 4-15s) | $0.09/s |
+| `bytedance/seedance-2.0-fast/text-to-video` | Seedance 2.0 Fast Text-to-Video | $0.027/s |
+| `bytedance/seedance-2.0-fast/image-to-video` | Seedance 2.0 Fast Image-to-Video | $0.027/s |
+| `bytedance/seedance-2.0-fast/reference-to-video` | Seedance 2.0 Fast Reference-to-Video | runtime estimate: `atlas generate cost` |
+| `bytedance/seedance-2.0-mini/text-to-video` | Seedance 2.0 Mini Text-to-Video (cheapest Seedance tier) | $0.0112/s |
+| `kwaivgi/kling-v3.0-std/text-to-video` | Kling v3.0 Std Text-to-Video | $0.1071/s |
+| `kwaivgi/kling-v3.0-std/image-to-video` | Kling v3.0 Std Image-to-Video | $0.1071/s |
+| `kwaivgi/kling-v3.0-pro/text-to-video` | Kling v3.0 Pro Text-to-Video | $0.1428/s |
+| `kwaivgi/kling-v3.0-pro/image-to-video` | Kling v3.0 Pro Image-to-Video | $0.1428/s |
+| `kwaivgi/kling-video-o3-pro/text-to-video` | Kling Video O3 Pro Text-to-Video | $0.119/s |
+| `vidu/q3-pro/text-to-video` | Vidu Q3 Pro Text-to-Video | $0.0425/s |
+| `vidu/q3-pro/image-to-video` | Vidu Q3 Pro Image-to-Video | $0.0425/s |
+| `alibaba/wan-2.7/image-to-video` | Wan-2.7 Image-to-Video | $0.1/s |
+| `alibaba/wan-3.0/text-to-video` | Wan-3.0 Text-to-Video (newest Wan on Atlas Cloud) | $0.04/s |
+| `alibaba/wan-3.0/image-to-video` | Wan-3.0 Image-to-Video | $0.04/s |
+| `alibaba/wan-3.0-prime/text-to-video` | Wan-3.0-Prime Text-to-Video | $0.0612/s |
+| `bytedance/seedance-v1.5-pro/text-to-video` | Seedance v1.5 Pro Text-to-Video | $0.0234/s |
+| `bytedance/seedance-v1.5-pro/image-to-video` | Seedance v1.5 Pro Image-to-Video | runtime estimate: `atlas generate cost` |
 | `bytedance/seedance-v1.5-pro/image-to-video-fast` | Seedance v1.5 Pro I2V Fast | $0.018/s |
-| `alibaba/wan-2.6/image-to-video-flash` | Wan-2.6 Image-to-Video Flash | $0.018/s |
-| `kwaivgi/kling-v2.6-pro/avatar` | Kling v2.6 Pro Avatar | $0.095/s |
-| `kwaivgi/kling-v2.6-std/avatar` | Kling v2.6 Std Avatar | $0.048/s |
-| `kwaivgi/kling-v3.0-pro/motion-control` | Kling v3.0 Pro Motion Control | $0.143/s |
+| `alibaba/wan-2.6/image-to-video-flash` | Wan-2.6 Image-to-Video Flash | $0.035/s |
+| `kwaivgi/kling-v2.6-pro/avatar` | Kling v2.6 Pro Avatar | $0.0952/s |
+| `kwaivgi/kling-v2.6-std/avatar` | Kling v2.6 Std Avatar | $0.0476/s |
+| `kwaivgi/kling-v3.0-pro/motion-control` | Kling v3.0 Pro Motion Control | $0.1428/s |
 
 ## LLM Models (priced per million tokens)
 
