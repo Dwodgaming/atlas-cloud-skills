@@ -20,7 +20,7 @@ A single, gorgeous establishing shot generated straight from text — a sweeping
 1. **Expand the line** — "Turn 'a lighthouse at dawn' into a detailed cinematic shot prompt with camera move, lens, light, and mood." → maps to `atlas_chat` with **Claude**.
 2. **Draft the framing** — run the expanded prompt cheaply first → maps to `atlas_generate_video` with **Seedance 2.5 t2v** (`seedance-2.0-fast`).
    > Tip: ask the agent to `atlas_search_docs` for the model first so it pulls live duration, resolution, and aspect-ratio params.
-3. **Final render** — re-run the keeper on **Veo 3.1 text-to-video** for fidelity *and* native audio (ambient sound baked in), or **Sora 2** for its motion/physics feel.
+3. **Final render** — re-run the keeper on **Veo 3.1 text-to-video** for fidelity *and* native audio (ambient sound baked in), or **Seedance 2.5** for its motion/physics feel (Atlas has no Sora model as of 2026-09-23).
 4. **Grade & loop (optional)** — ask the agent for an ffmpeg color tweak or a clean loop point.
 
 ## Prompt starters
@@ -38,7 +38,7 @@ depth of field, moody. 8 seconds, 16:9, ambient city + rain sound.
 
 ## Tips & variations
 
-- Pick **Veo 3.1** when you want sound for free; pick **Sora 2** for complex motion and physical realism.
+- Pick **Veo 3.1** when you want sound for free; pick **Seedance 2.5** for complex motion and physical realism.
 - Always name the camera move ("dolly in", "crane up", "orbit") — vague prompts give static shots.
 - Need this to continue into a longer take? Hand the clip to the [Extend a Short Clip](../edit/video-extend.md) recipe.
 

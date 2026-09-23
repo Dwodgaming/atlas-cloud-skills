@@ -1,6 +1,6 @@
 ---
 name: atlas-cloud
-description: "Atlas Cloud API — 300+ AI models (image, video, audio TTS/music/ASR, 3D, LLM) via one API. Use for image gen (Flux, Seedream, DALL-E), video (Kling, Sora, Seedance), OpenAI-compatible LLM calls, TTS/music (Seed Audio, Suno), audio transcription, or image/text-to-3D."
+description: "Atlas Cloud API — 300+ AI models (image, video, audio TTS/music/ASR, 3D, LLM) via one API. Use for image gen (Flux, Seedream, DALL-E), video (Kling, Seedance, Wan), OpenAI-compatible LLM calls, TTS/music (Seed Audio, Suno), audio transcription, or image/text-to-3D."
 ---
 
 # Atlas Cloud API Integration Guide
