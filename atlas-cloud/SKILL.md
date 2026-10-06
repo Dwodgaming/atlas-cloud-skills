@@ -7,6 +7,13 @@ description: "Atlas Cloud API — 300+ AI models (image, video, audio TTS/music/
 
 Atlas Cloud is an AI API aggregation platform that provides access to 300+ image, video, audio (TTS · music · speech-to-text), 3D, and LLM models through a unified interface. This skill helps you quickly integrate Atlas Cloud API into any project.
 
+## Brayden’s image preferences
+
+For image edits, decomposition and video reframing, read
+[`references/bray-image-preferences.md`](references/bray-image-preferences.md).
+It owns the preferred Atlas candidates and the editable-static production trial.
+Explicit user choices take precedence; fetch current schemas before execution.
+
 ## Quick Start
 
 ### 1. Get an API Key
