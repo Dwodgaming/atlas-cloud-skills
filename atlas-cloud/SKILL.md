@@ -433,20 +433,19 @@ The tables below are **illustrative only**. They go stale. Treat them as hints a
 
 ## Popular Models (illustrative only — MUST verify via API before use)
 
-### Image Models (priced per image; entry price at the lowest listed size, from the live catalogue on 2026-09-23)
-| Model ID | Name | Price |
-|----------|------|-------|
-| `openai/gpt-image-2.5-flare/text-to-image` | GPT Image 2.5 Flare Text-to-Image | token-priced: `atlas generate cost` |
-| `openai/gpt-image-2.5-flare/edit` | GPT Image 2.5 Flare Edit | token-priced: `atlas generate cost` |
-| `openai/gpt-image-2.5-sunburst/text-to-image` | GPT Image 2.5 Sunburst Text-to-Image | token-priced: `atlas generate cost` |
-| `openai/gpt-image-2.5-sunburst/edit` | GPT Image 2.5 Sunburst Edit | token-priced: `atlas generate cost` |
-| `google/nano-banana-2/text-to-image` | Nano Banana 2 Text-to-Image | $0.08/image |
-| `google/nano-banana-2/text-to-image-developer` | Nano Banana 2 Developer | $0.028/image |
-| `google/nano-banana-2/edit` | Nano Banana 2 Edit | $0.08/image |
-| `bytedance/seedream-v5.0-lite` | Seedream v5.0 Lite | $0.0315/image |
-| `bytedance/seedream-v5.0-lite/edit` | Seedream v5.0 Lite Edit | $0.0315/image |
-| `alibaba/qwen-image/edit-plus-20251215` | Qwen-Image Edit Plus | $0.021/image |
-| `z-image/turbo` | Z-Image Turbo | $0.005/image |
+### Image models and routing
+
+For preferred image models and matched parallel edit trials, read
+[Brayden’s image preferences](references/bray-image-preferences.md). It covers MAI Image 2.6 Flash/Edit,
+GPT Image 2.5 Flare Edit, Qwen Image 3.0 Pro Edit and Seedream v5 Flash/Pro.
+Use Atlas Cloud directly for this shortlist and Seedream v5 Pro generation unless
+Brayden selects another provider or aggregator UI. Use `images/image-router` for
+asset-specific handoffs and the matching prompting skill for GPT/Seedream prompts.
+
+Fetch `atlas models list --type image --json`, inspect the selected schema with
+`atlas models get <model-id> --json`, then estimate the actual request with
+`atlas generate cost image <model-id> ... --json`. The preference reference holds
+dated estimates; the live catalogue and schema determine execution.
 
 ### Video Models (priced per second of output; entry price at the lowest listed resolution, from the live catalogue on 2026-09-23. Higher resolutions cost more)
 | Model ID | Name | Price |
