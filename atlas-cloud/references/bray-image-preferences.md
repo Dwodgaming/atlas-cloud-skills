@@ -1,8 +1,8 @@
 # Brayden’s preferred Atlas image workflows
 
-Updated 2026-10-06 from Brayden’s explicit preferences; edit IDs and schemas
+Updated 2026-10-06 from Brayden’s explicit preferences (Seedream 5.5 added 2026-11-07); edit IDs and schemas
 verified with `atlas models list --type image --json` and `atlas models get`.
-Default to **Atlas Cloud directly** for these edits and Seedream v5 Pro generation.
+Default to **Atlas Cloud directly** for these edits and Seedream generation (Seedream 5.5 by default from 2026-11-07).
 An explicitly selected provider, skill or aggregator UI wins. Atlas is Brayden’s
 preferred cost route, not a verified claim that it is always the cheapest host.
 These are candidates to test, not local quality rankings or an instruction to run
@@ -17,6 +17,7 @@ all models. Re-fetch availability, schema and cost for the actual settings.
 | GPT Image 2.5 Flare Edit | `openai/gpt-image-2.5-flare/edit` | Estimate live for quality/size/input tokens | `images`, up to 16; optional `mask`; set quality and size explicitly |
 | Qwen Image 3.0 Pro Edit | `qwen-image-3.0-pro/edit` | Estimate live | `reference_image_urls`, 1–3; 384–2048 px recommended, ≤10 MB; output 512*512–1440*1440 |
 | Seedream v5.0 Flash Edit | `bytedance/seedream-v5.0-flash/edit` | $0.018 | `images`, up to 10; preset `WIDTH*HEIGHT` size; reference inputs free |
+| Seedream v5.5 Edit (default Seedream edit, 2026-11-07) | `bytedance/seedream-v5.5/edit` | $0.0276 at 2048*2048, 1 ref; about +$0.006 per extra ref | `reference_images` (not `images`), 1–10; 32 `W*H` presets; output does **not** follow input ratio, so set a matching `size`; `background=transparent` needs PNG |
 | Seedream v5.0 Pro Edit | `bytedance/seedream-v5.0-pro/edit` | $0.072 entry estimate | `images`, up to 10; preset `WIDTH*HEIGHT`; pixel tier and extra references affect cost |
 
 Keep Flare standard and Developer endpoints distinct. The separately available
@@ -33,8 +34,8 @@ Other preferred workflows:
 
 | Task | Preferred model IDs |
 | --- | --- |
-| Seedream v5 Pro text-to-image | `bytedance/seedream-v5.0-pro/text-to-image` |
-| Separate a selected static into movable, individually editable objects/layers | `bytedance/seedream-v5.0-flash/layer-decomposition`; `bytedance/seedream-v5.0-pro/layer-decomposition` |
+| Seedream text-to-image (default 5.5) | `bytedance/seedream-v5.5/text-to-image` ($0.0216 at 2048*2048); fallback `bytedance/seedream-v5.0-pro/text-to-image`. Prompt with `images/seedream-prompting`. |
+| Separate a selected static into movable, individually editable objects/layers | `bytedance/seedream-v5.0-flash/layer-decomposition`; `bytedance/seedream-v5.0-pro/layer-decomposition`; `bytedance/seedream-v5.5/layer-decomposition` (untested here; up to 99 layers, optional text OCR) |
 | Video reframing | `luma/ray-3.2/reframe` (video model, not static-image decomposition) |
 
 ## Matched parallel edit trials

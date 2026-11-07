@@ -34,8 +34,8 @@
 
 For preferred image models and matched parallel edit trials, read
 [Brayden’s image preferences](bray-image-preferences.md). It covers MAI Image 2.6 Flash/Edit,
-GPT Image 2.5 Flare Edit, Qwen Image 3.0 Pro Edit and Seedream v5 Flash/Pro.
-Use Atlas Cloud directly for this shortlist and Seedream v5 Pro generation unless
+GPT Image 2.5 Flare Edit, Qwen Image 3.0 Pro Edit and Seedream 5.5 and v5 Flash/Pro.
+Use Atlas Cloud directly for this shortlist and Seedream 5.5 generation unless
 Brayden selects another provider or aggregator UI. Use `images/image-router` for
 asset-specific handoffs and the matching prompting skill for GPT/Seedream prompts.
 
