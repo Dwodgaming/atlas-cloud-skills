@@ -5,6 +5,14 @@ description: "Atlas Cloud API — 300+ AI models (image, video, audio TTS/music/
 
 # Atlas Cloud API Integration Guide
 
+## Benchmark requests
+
+When asked to benchmark or compare models, read the shared
+[automatic benchmark capture workflow](../../../benchmarks/agent-workflow.md)
+before execution. Carry it through recording prompts, costs, outputs and receipts
+and verifying the minimalist viewer; the user does not need to name CLI commands.
+This capture step preserves the chosen provider and existing execution approval.
+
 Atlas Cloud is an AI API aggregation platform that provides access to 300+ image, video, audio (TTS · music · speech-to-text), 3D, and LLM models through a unified interface. This skill helps you quickly integrate Atlas Cloud API into any project.
 
 ## Brayden’s image preferences
@@ -603,3 +611,33 @@ References are read-only. Video-generated references must be approved/winner; su
 
 No `_atelier/project.json` → ignore this section.
 <!-- atelier:end -->
+
+## Atlas cost capture in Atelier-backed projects
+
+When `_atelier/project.json` is present, add this capture step between staging and finishing.
+Capture available Atlas quotes without blocking the authorized generation. Save the exact
+   params JSON used for both `atlas generate cost image|video <model> --params-json @params.json --json`
+   and generation; save the raw quote output in `_ops/scratch/`. After submission returns its
+   prediction ID, build `submission.json` from the actual `requestId`, `prompt` and ordered
+   project-relative `referencePaths`, then record it with the saved files:
+   ```bash
+   atelier job record <project-root> <run-id> --status running --submission-file submission.json \
+     --atlas-params-file params.json --atlas-quote-file atlas-quote.json --json
+   ```
+   Keep params unchanged between quote and submission. Atlas CLI quote model/kind must match
+   the staged run. The recorder retains redacted recipe/quote evidence and documented USD/request
+   units. Quotes contribute EST spend only after successful, exactly linked request outputs with
+   matching output count. Unfired quotes are not spend; pending, failed and partial batches remain
+   unknown coverage. Quotes are never verified debit receipts. Missing/invalid evidence warns
+   without undoing media success. Use the project's `atelier-costs` workflow for readback/recovery.
+   Record every paid prediction separately, including attempts later retried for missing audio or
+   other defects. Poll/resume a timeout's original ID; cost recovery never triggers a paid retry.
+
+
+## Seedance 2.5: draft mode and draft-complete
+
+- `bytedance/seedance-2.5/*` has no `seed` parameter. Atlas does not return the seed of a finished run.
+- Add `"draft": true` to the request to render a 480p preview that bills as a normal 480p render. The response carries a `draft_id`.
+- Render the 1080p final of that exact take with `bytedance/seedance-2.5/draft-complete` and `{"draft_id": "..."}` within 7 days.
+- A 480p run without `draft: true` cannot be completed at 1080p. Use a fal upscaler instead.
+- Preview with draft by default for any take that may reach a client. Rule added 16 Oct 2026 after RIDG3051 ONE12Q and ONE12U could not be re-rendered.
