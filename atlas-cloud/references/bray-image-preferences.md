@@ -34,7 +34,7 @@ Other preferred workflows:
 
 | Task | Preferred model IDs |
 | --- | --- |
-| Seedream text-to-image (default 5.5) | `bytedance/seedream-v5.5/text-to-image` ($0.0216 at 2048*2048); fallback `bytedance/seedream-v5.0-pro/text-to-image`. Prompt with `images/seedream-prompting`. |
+| Seedream text-to-image (default 5.5) | `bytedance/seedream-v5.5/text-to-image` ($0.0216 at 2048*2048); `bytedance/seedream-v5.0-pro/text-to-image` only when named. Prompt with `images/seedream-prompting`. |
 | Separate a selected static into movable, individually editable objects/layers | `bytedance/seedream-v5.5/layer-decomposition` (default, untested here, about USD 0.648; up to 99 layers, optional text OCR, takes `resolution` not `size`); `bytedance/seedream-v5.0-flash/layer-decomposition` (cheaper, about USD 0.306); `bytedance/seedream-v5.0-pro/layer-decomposition` only when named |
 | Video reframing | `luma/ray-3.2/reframe` (video model, not static-image decomposition) |
 
